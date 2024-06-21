@@ -113,4 +113,12 @@ class TDeviceUtils {
           throw 'Could not launch $url';
 
   }
+
+  /*static Size screenSize(){
+    return MediaQuery.of(Get.context!).size;
+  }
+
+    static double screenHeight(){
+    return MediaQuery.of(Get.context!).size.height;
+  }*/
 }

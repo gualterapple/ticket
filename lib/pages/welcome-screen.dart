@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket/pages/confirm-phone-page.dart';
 import 'package:ticket/utils/contants/colors.dart';
+import 'package:ticket/utils/devices_utilities.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -13,55 +15,72 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
-          body: GestureDetector(
-        onTap: () =>
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return ConfirmPhoneScreen();
-        })),
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/welcome-background.jpg'),
-                  fit: BoxFit.cover)),
-          child: Padding(
-            padding:
-                const EdgeInsets.only(left: 16.0, bottom: 30.0, right: 20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Bem-vindo/a',
-                  textAlign: TextAlign.left,
-                  style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                    fontSize: 25,
-                    color: TColors.whiteColor,
-                  )),
-                ),
-                Text(
-                  'Buombo Táxi',
-                  textAlign: TextAlign.left,
-                  style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                          fontSize: 36,
-                          color: TColors.primaryColor,
-                          fontWeight: FontWeight.bold)),
-                ),
-                Text(
-                  'Viaje no melhor conforto de sempre, com o melhor aplicativo de táxi personalizado.',
-                  textAlign: TextAlign.left,
-                  style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                    fontSize: 14,
-                    color: TColors.primaryColor,
-                  )),
-                ),
-              ],
-            ),
-          ),
-        ),
+          body: Stack(
+        children: [
+          PageView(
+            children: const [
+              OnboardingPage(imagem: 'assets/images/girl.png',
+              titulo_1: 'A SUA VIDA',
+              titulo_2: ' ACADÉMICA',titulo_3: 'NA PALMA DA MÃO', descricao: 'Tenha acesso aos seus dados académicos, de forma rápida, simples e intuitiva.'),
+              OnboardingPage(imagem: 'assets/images/boy.png',
+              titulo_1: 'COM TODOS',
+              titulo_2: ' RECURSOS',titulo_3: 'QUE PRECISAS', descricao: 'Visualize todas as suas notas, pagamentos e solicitações, sem perda de tempo.')
+            ],
+          )
+        ],
       ));
+}
+
+class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({
+    super.key, required this.titulo_1, required this.titulo_2, required this.titulo_3, required this.descricao, required this.imagem,
+  });
+
+  final String imagem, titulo_1, titulo_2, titulo_3, descricao;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          Image(
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.height * 0.6,
+              image: AssetImage(imagem)),
+          Row(
+            children: [
+              Image(
+                  width:  30,
+                  height: 30,
+                  image: const AssetImage('assets/images/screen-logo.png')),
+                  SizedBox(width: 10,),
+              Text(
+                'SISTEMA INTEGRADO DE GESTÃO ACADÉMICA',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 14),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(titulo_1, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+              Text(titulo_2, style: TextStyle(fontSize: 24, 
+              fontWeight: FontWeight.bold, color: TColors.primaryColor,),)],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(titulo_3,style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+            ],
+          ),
+      
+          Container(child: Text(descricao,
+          style: TextStyle(color: TColors.grayColor),))
+      
+        ],
+      ),
+    );
+  }
 }

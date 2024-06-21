@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ticket/pages/splash-screen.dart';
 import 'package:ticket/utils/theme/theme.dart';
 
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
       themeMode: ThemeMode.system,
