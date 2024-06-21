@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket/pages/welcome-screen.dart';
+import 'package:ticket/pages/onboarding-screen.dart';
 import 'package:ticket/utils/contants/colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigateToHome() async {
     await Future.delayed(Duration(milliseconds: 4000), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+        context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
   }
 
   Widget build(BuildContext context) {

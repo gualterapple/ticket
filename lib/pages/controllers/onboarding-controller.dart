@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class WelcomeController extends GetxController {
-  static WelcomeController get instance => Get.find();
+class OnBoardingController extends GetxController {
+  static OnBoardingController get instance => Get.find();
 
   /// Variables
   // Declare your variables here
