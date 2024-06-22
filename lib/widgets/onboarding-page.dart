@@ -36,9 +36,12 @@ class OnboardingPage extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              Text(
-                'SISTEMA INTEGRADO DE GESTÃO ACADÉMICA',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: Text(
+                  'SISTEMA INTEGRADO DE GESTÃO ACADÉMICA',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
               )
             ],
           ),
@@ -47,7 +50,8 @@ class OnboardingPage extends StatelessWidget {
             children: [
               Text(
                 titulo_1,
-                style: TextStyle(fontSize: TTextSizes.bigTitle, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: TTextSizes.bigTitle, fontWeight: FontWeight.bold),
               ),
               Text(
                 titulo_2,
@@ -64,7 +68,8 @@ class OnboardingPage extends StatelessWidget {
             children: [
               Text(
                 titulo_3,
-                style: TextStyle(fontSize: TTextSizes.bigTitle, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: TTextSizes.bigTitle, fontWeight: FontWeight.bold),
               ),
             ],
           ),
