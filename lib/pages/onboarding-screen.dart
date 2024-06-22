@@ -3,9 +3,8 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:ticket/pages/controllers/onboarding-controller.dart';
-import 'package:ticket/utils/contants/colors.dart';
+import 'package:ticket/utils/contants/images.dart';
 import 'package:ticket/widgets/onboarding-page.dart';
-import 'package:ticket/utils/contants/colors.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -25,9 +24,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           PageView(
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
-            children: const [
+            children: [
               OnboardingPage(
-                imagem: 'assets/images/girl-ransparence.png',
+                imagem: TImagens.girlTransparence,
                 titulo_1: 'A SUA VIDA',
                 titulo_2: ' ACADÉMICA',
                 titulo_3: 'NA PALMA DA MÃO',
@@ -35,7 +34,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     'Tenha acesso aos seus dados académicos, de forma rápida, simples e intuitiva.',
               ),
               OnboardingPage(
-                imagem: 'assets/images/boy-transparence.png',
+                imagem: TImagens.boyTransparence,
                 titulo_1: 'COM TODOS',
                 titulo_2: ' RECURSOS',
                 titulo_3: 'QUE PRECISAS',

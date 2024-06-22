@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket/utils/contants/colors.dart';
+import 'package:ticket/utils/contants/images.dart';
+import 'package:ticket/utils/contants/text-sizes.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({
@@ -29,9 +31,9 @@ class OnboardingPage extends StatelessWidget {
               Image(
                 width: 30,
                 height: 30,
-                image: const AssetImage('assets/images/screen-logo.png'),
+                image: AssetImage(TImagens.screenLogo.toString()),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(
@@ -45,12 +47,12 @@ class OnboardingPage extends StatelessWidget {
             children: [
               Text(
                 titulo_1,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: TTextSizes.bigTitle, fontWeight: FontWeight.bold),
               ),
               Text(
                 titulo_2,
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: TTextSizes.bigTitle,
                   fontWeight: FontWeight.bold,
                   color: TColors.primaryColor,
                 ),
@@ -62,7 +64,7 @@ class OnboardingPage extends StatelessWidget {
             children: [
               Text(
                 titulo_3,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: TTextSizes.bigTitle, fontWeight: FontWeight.bold),
               ),
             ],
           ),
