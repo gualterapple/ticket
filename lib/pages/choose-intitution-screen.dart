@@ -5,7 +5,7 @@ import 'package:ticket/utils/contants/images.dart';
 import 'package:ticket/utils/contants/sizes.dart';
 import 'package:ticket/utils/contants/text-sizes.dart';
 
-class LoginScreen extends StatefulWidget {
+class ChooseInstitutionScreen extends StatefulWidget {
   final List<Map<String, String>> institutions = [
     {
       'name': 'UGS',
@@ -19,13 +19,13 @@ class LoginScreen extends StatefulWidget {
     },
   ];
 
-  LoginScreen({super.key});
+  ChooseInstitutionScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ChooseInstitutionScreen> createState() => _ChooseInstitutionScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
   late String currentOption;
 
   @override

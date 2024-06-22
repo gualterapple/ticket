@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ticket/pages/login-screen.dart';
+import 'package:ticket/pages/choose-intitution-screen.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -21,7 +21,7 @@ class OnBoardingController extends GetxController {
 
   void nextPage() {
     if (currentPageIndex.value == 1) {
-      Get.to(LoginScreen());
+      Get.to(ChooseInstitutionScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
