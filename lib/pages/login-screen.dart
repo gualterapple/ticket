@@ -105,7 +105,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   institution[
                                       'descricao']!, // Substitua pela descrição correta
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize:
+                                        MediaQuery.of(context).size.width *
+                                            0.03,
                                     color: TColors.grayColor,
                                   ),
                                 ),
@@ -155,7 +157,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Continuar', style: TextStyle(fontSize: 18),),
+                      Text(
+                        'Continuar',
+                        style: TextStyle(fontSize: 18),
+                      ),
                       SizedBox(width: 8), // Espaçamento entre o texto e o ícone
                       Icon(Iconsax.arrow_right),
                     ],

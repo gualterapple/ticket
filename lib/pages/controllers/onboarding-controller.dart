@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ticket/pages/login-screnn.dart';
+import 'package:ticket/pages/login-screen.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -11,8 +11,7 @@ class OnBoardingController extends GetxController {
   void updatePageIndicator(int index) {
     try {
       currentPageIndex.value = index;
-    } catch (e) {
-    }
+    } catch (e) {}
   }
 
   void dotNavigationClick(int index) {
@@ -29,6 +28,5 @@ class OnBoardingController extends GetxController {
     }
   }
 
-  void skipPage() {
-  }
+  void skipPage() {}
 }
