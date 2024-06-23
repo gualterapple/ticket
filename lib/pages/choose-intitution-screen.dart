@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ticket/pages/login-screen.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/utils/contants/images.dart';
 import 'package:ticket/utils/contants/sizes.dart';
@@ -152,7 +154,7 @@ class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // Ação do botão "Continuar"
+                    Get.to(LoginScreen());
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,

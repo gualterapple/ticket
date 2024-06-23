@@ -13,9 +13,8 @@ class TColors {
     begin: Alignment(0.0, 0.0),
     end: Alignment(0.707, -0.707),
     colors: [
-      Color(0xffff9a9e),
-      Color(0xfffad0c4),
-      Color(0xfffad0c4),
+      Color(0xff63cda8),
+      Color(0xff47b38e)
     ],
   ); // LinearGradient
 }
