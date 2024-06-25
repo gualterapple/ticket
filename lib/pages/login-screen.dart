@@ -95,47 +95,124 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.only(
                     bottom: 20), // Ajuste o valor conforme necessário
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Container(
-            decoration: BoxDecoration(
-              gradient: TColors.linearGradient,
-              borderRadius: BorderRadius.circular(5.0), // Borda arredondada igual ao botão
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(5.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5.0),
-            side: BorderSide.none, // Remove a borda
-            
-          ),
-          backgroundColor: Colors.transparent, // Fundo transparente para mostrar o gradiente
-          elevation: 0,
-          padding: EdgeInsets.symmetric(vertical: 12),
-          textStyle: TextStyle(
-            fontSize: TTextSizes.bigTitle,
-            fontWeight: FontWeight.bold,
-          ),
-                ),
-                onPressed: () {
-          // Ação do botão "Continuar"
-                },
-                child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'Entrar',
-              style: TextStyle(fontSize: 18),
-            ),
-          ],
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: TColors.linearGradient,
+                        borderRadius: BorderRadius.circular(
+                            5.0), // Borda arredondada igual ao botão
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5.0),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            side: BorderSide(
+                              width: 3.0,
+                              color: Colors.transparent,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            backgroundColor: Colors
+                                .transparent, // Fundo transparente para mostrar o gradiente
+                            elevation: 0,
+                            padding: EdgeInsets.symmetric(vertical: 12),
+                            textStyle: TextStyle(
+                              fontSize: TTextSizes.bigTitle,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          onPressed: () {
+                            // Ação do botão "Continuar"
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                'Entrar',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                      child: Divider(
+                    color: TColors.grayColor,
+                    thickness: 0.5,
+                    indent: 60,
+                    endIndent: 5,
+                  )),
+                  Text(
+                    'ou',
+                    style: TextStyle(
+                        color: TColors.grayColor, fontWeight: FontWeight.bold),
+                  ),
+                  Flexible(
+                      child: Divider(
+                    color: TColors.grayColor,
+                    thickness: 0.5,
+                    indent: 5,
+                    endIndent: 60,
+                  ))
+                ],
+              ),
+              SizedBox(height: 20),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    side: BorderSide(
+                      width: 1.0,
+                      color: TColors.ligthGrayColor,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    backgroundColor: TColors
+                        .borderGrayColor, // Fundo transparente para mostrar o gradiente
+                    elevation: 0,
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                    textStyle: TextStyle(
+                      fontSize: TTextSizes.bigTitle,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image(height: 20, image: AssetImage(TImagens.gmailLogo)),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        'Entrar com Google',
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          )
-          
-                ),
+              SizedBox(
+                height: 50,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(height: 20, image: AssetImage(TImagens.ockayulaLogo)),
+                  SizedBox(width: 10,),
+                  Text('Portal Okayula')
+                ],
+              )
             ],
           ),
         ),

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ticket/pages/login-screen.dart';
@@ -24,7 +26,8 @@ class ChooseInstitutionScreen extends StatefulWidget {
   ChooseInstitutionScreen({super.key});
 
   @override
-  State<ChooseInstitutionScreen> createState() => _ChooseInstitutionScreenState();
+  State<ChooseInstitutionScreen> createState() =>
+      _ChooseInstitutionScreenState();
 }
 
 class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
@@ -141,6 +144,10 @@ class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    side: BorderSide(
+                      width: 3.0,
+                      color: Colors.transparent,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       side: const BorderSide(width: 0, color: Colors.white),
@@ -170,6 +177,7 @@ class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
                 ),
               ),
             ),
+
           ],
         ),
       ),

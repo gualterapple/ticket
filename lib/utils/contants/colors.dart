@@ -7,6 +7,8 @@ class TColors {
   static Color secundaryColor = Color.fromARGB(255, 160, 207, 30);
   static Color whiteColor = Color.fromARGB(255, 245, 245, 245);
   static Color grayColor = Color.fromARGB(255, 119, 119, 119);
+  static Color ligthGrayColor = Color.fromARGB(255, 236, 236, 236);
+  static Color borderGrayColor = Color.fromARGB(255, 236, 236, 236);
 
   // Gradient Colors
   static const Gradient linearGradient = LinearGradient(

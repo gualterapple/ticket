@@ -47,7 +47,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             bottom: 100,
             left: 20,
             child: SmoothPageIndicator(
-              effect: ExpandingDotsEffect(activeDotColor: Colors.black, dotHeight: 6),
+              effect: ExpandingDotsEffect(
+                  activeDotColor: Colors.black, dotHeight: 6),
               controller: controller.pageController,
               onDotClicked: controller.dotNavigationClick,
               count: 2,
@@ -60,6 +61,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     bottom: 10,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        side: BorderSide(
+                          width: 3.0,
+                          color: Colors.transparent,
+                        ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                           side: const BorderSide(width: 0, color: Colors.white),
@@ -79,9 +84,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            side: BorderSide(
+                              width: 3.0,
+                              color: Colors.transparent,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5.0),
-                              side: const BorderSide(width: 0, color: Colors.white),
+                              side: const BorderSide(
+                                  width: 0, color: Colors.white),
                             ),
                             backgroundColor: Colors.black,
                             elevation: 0,
