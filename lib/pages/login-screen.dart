@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ticket/services/api.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/utils/contants/images.dart';
 import 'package:ticket/utils/contants/sizes.dart';
 import 'package:ticket/utils/contants/text-sizes.dart';
+import 'package:dio/dio.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,6 +16,19 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final dio = Dio();
+  final api = API();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void getHttp() async {
+    final response = await dio.get('https://catfact.ninja/breeds');
+    print(response);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,8 +137,19 @@ class _LoginScreenState extends State<LoginScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          onPressed: () {
-                            // Ação do botão "Continuar"
+                          onPressed: () async {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return Center(
+                                  child: CircularProgressIndicator(color: TColors.primaryColor,),
+                                );
+                              },
+                              barrierDismissible:
+                                  false, // Evita que o usuário feche o diálogo ao tocar fora
+                            );
+                            await api.login();
+                            Navigator.of(context).pop();
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -209,7 +235,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(height: 20, image: AssetImage(TImagens.ockayulaLogo)),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Text('Portal Okayula')
                 ],
               )
