@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ticket/pages/forgot-password-screen.dart';
 import 'package:ticket/services/api.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/utils/contants/images.dart';
@@ -92,9 +93,15 @@ class _LoginScreenState extends State<LoginScreen> {
                             'Esqueceu a sua senha ? ',
                             style: TextStyle(color: TColors.grayColor),
                           ),
-                          Text(
-                            'clique aqui.',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          TextButton(
+                            style: TextButton.styleFrom(),
+                            onPressed: () { 
+                              Get.to(ForgotPasswordScreen());
+                             },
+                            child: Text(
+                              'clique aqui.',
+                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                            ),
                           )
                         ],
                       ),
