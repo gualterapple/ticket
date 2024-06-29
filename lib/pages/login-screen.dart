@@ -77,6 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Iconsax.direct_right),
                           labelText: 'E-mail',
+                          border: OutlineInputBorder()
                         ),
                       ),
                       SizedBox(height: 16),
@@ -84,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                             prefixIcon: Icon(Iconsax.password_check),
                             labelText: 'Senha',
+                            border: OutlineInputBorder(),
                             suffixIcon: Icon(Iconsax.eye_slash)),
                       ),
                       SizedBox(height: 20),

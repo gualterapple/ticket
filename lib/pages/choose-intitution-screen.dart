@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ticket/pages/login-screen.dart';
@@ -8,6 +6,8 @@ import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/utils/contants/images.dart';
 import 'package:ticket/utils/contants/sizes.dart';
 import 'package:ticket/utils/contants/text-sizes.dart';
+import 'package:ticket/widgets/big-title-text.dart';
+import 'package:ticket/widgets/black-button.dart';
 
 class ChooseInstitutionScreen extends StatefulWidget {
   final List<Map<String, String>> institutions = [
@@ -58,16 +58,11 @@ class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
                   child: Image(
                       height: 100, image: AssetImage(TImagens.screenLogo)),
                 ),
-                SizedBox(height: 20),
-                Center(
-                  child: Text(
-                    'BEM VINDO AO SIGA!',
-                    style: TextStyle(
-                        fontSize: TTextSizes.bigTitle,
-                        fontWeight: FontWeight.bold),
-                  ),
+                const SizedBox(height: 20),
+                const Center(
+                  child: BigTitle(texto: 'BEM VINDO AO SIGA!'),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Center(
                   child: Text(
                     'Selecione a sua instituição de ensino para poder começar.',
@@ -137,47 +132,7 @@ class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
               ],
             ),
             // Botão Continuar
-            Padding(
-              padding: const EdgeInsets.only(
-                  bottom: 20), // Ajuste o valor conforme necessário
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    side: BorderSide(
-                      width: 3.0,
-                      color: Colors.transparent,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      side: const BorderSide(width: 0, color: Colors.white),
-                    ),
-                    backgroundColor: Colors.black,
-                    elevation: 0,
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    textStyle: TextStyle(
-                      fontSize: TTextSizes.bigTitle,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.to(LoginScreen());
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Continuar',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      SizedBox(width: 8), // Espaçamento entre o texto e o ícone
-                      Icon(Iconsax.arrow_right),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-
+            BlackButtom(onPressed: () => Get.to(const LoginScreen()), texto: 'Continuar', hasIcon: true,)
           ],
         ),
       ),

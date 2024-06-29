@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:ticket/pages/verify-code-screen.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/widgets/big-title-text.dart';
 import 'package:ticket/widgets/black-button.dart';
 
-class ForgotPasswordScreen extends StatefulWidget {
-  const ForgotPasswordScreen({super.key});
+class VerifyCodeScreen extends StatefulWidget {
+  const VerifyCodeScreen({super.key});
 
   @override
-  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
+  State<VerifyCodeScreen> createState() => _VerifyCodeScreenState();
 }
 
-class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,12 +33,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const BigTitle(texto: 'ESQUECEU A SUA SENHA ?'),
+              const BigTitle(texto: 'VERIFICAÇÃO DO CÓDIGO'),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                'Insira o seu email e enviaremos um códigode verificação.',
+                'Insira o código que foi enviado para o seu email nos campos abaixo.',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: TColors.grayColor),
               ),
@@ -58,7 +57,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     height: 20,
                   ),
                   const SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   BlackButtom(
                     onPressed: () => Get.to(VerifyCodeScreen()),
@@ -67,6 +66,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   )
                 ]),
               ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Row(
+                    children: [
+                      Text('Não recebeu o código ?'),
+                      Text(
+                        ' Reenviar',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  )
+                ],
+              )
             ],
           ),
         ));
