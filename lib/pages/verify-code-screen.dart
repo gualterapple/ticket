@@ -1,7 +1,8 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:sms_autofill/sms_autofill.dart';
+import 'package:ticket/pages/new-password-page.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/widgets/big-title-text.dart';
 import 'package:ticket/widgets/black-button.dart';
@@ -14,8 +15,7 @@ class VerifyCodeScreen extends StatefulWidget {
 }
 
 class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
-
-  String _code="";
+  String _code = "";
 
   @override
   void initState() {
@@ -68,18 +68,20 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               Form(
                 child: Column(children: [
                   PinFieldAutoFill(
-                decoration: UnderlineDecoration(
-                  textStyle: const TextStyle(fontSize: 20, color: Colors.black),
-                  colorBuilder: FixedColorBuilder(Colors.black.withOpacity(0.3)),
-                ),
-                currentCode: _code,
-                onCodeSubmitted: (code) {},
-                onCodeChanged: (code) {
-                  if (code!.length == 6) {
-                    FocusScope.of(context).requestFocus(FocusNode());
-                  }
-                },
-              ),
+                    decoration: UnderlineDecoration(
+                      textStyle:
+                          const TextStyle(fontSize: 20, color: Colors.black),
+                      colorBuilder:
+                          FixedColorBuilder(Colors.black.withOpacity(0.3)),
+                    ),
+                    currentCode: _code,
+                    onCodeSubmitted: (code) {},
+                    onCodeChanged: (code) {
+                      if (code!.length == 6) {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                      }
+                    },
+                  ),
                   /*Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -211,15 +213,28 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       ),
                     ],
                   ),
-                  */const SizedBox(
+                  */
+                  const SizedBox(
                     height: 20,
                   ),
                   const SizedBox(
                     height: 20,
                   ),
+
+                  _code == '' ?
                   BlackButtom(
-                    onPressed: () => Get.to(VerifyCodeScreen()),
+                    onPressed: () async {
+                      setState(() {
+                        _code = '123456';
+                      });
+                    },
                     texto: 'Continuar',
+                    hasIcon: false,
+                  ):
+
+                  BlackButtom(
+                    onPressed: () => Get.to(NewPassWordScreen()),
+                    texto: 'Confirmar',
                     hasIcon: false,
                   )
                 ]),
@@ -244,9 +259,9 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
           ),
         ));
   }
-}*/
+}
 
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 
 class VerifyCodeScreen extends StatefulWidget {
@@ -417,3 +432,4 @@ class _CodeAutoFillTestPageState extends State<CodeAutoFillTestPage> with CodeAu
     );
   }
 }
+*/

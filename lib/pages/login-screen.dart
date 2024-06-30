@@ -8,6 +8,7 @@ import 'package:ticket/utils/contants/images.dart';
 import 'package:ticket/utils/contants/sizes.dart';
 import 'package:ticket/utils/contants/text-sizes.dart';
 import 'package:dio/dio.dart';
+import 'package:ticket/widgets/gradient-button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -30,8 +31,11 @@ class _LoginScreenState extends State<LoginScreen> {
     print(response);
   }
 
+    bool _obscurePassword = true;
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(
@@ -75,18 +79,30 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(children: [
                       TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Iconsax.direct_right),
-                          labelText: 'E-mail',
-                          border: OutlineInputBorder()
-                        ),
+                            prefixIcon: Icon(Iconsax.direct_right),
+                            labelText: 'E-mail',
+                            border: OutlineInputBorder()),
                       ),
                       SizedBox(height: 16),
                       TextFormField(
+                        obscureText: _obscurePassword,
                         decoration: InputDecoration(
-                            prefixIcon: Icon(Iconsax.password_check),
-                            labelText: 'Senha',
-                            border: OutlineInputBorder(),
-                            suffixIcon: Icon(Iconsax.eye_slash)),
+                          prefixIcon: Icon(Iconsax.password_check),
+                          labelText: 'Senha',
+                          border: OutlineInputBorder(),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _obscurePassword
+                                  ? Iconsax.eye
+                                  : Iconsax.eye_slash,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _obscurePassword = !_obscurePassword;
+                              });
+                            },
+                          ),
+                        ),
                       ),
                       SizedBox(height: 20),
                       Row(
@@ -97,12 +113,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           TextButton(
                             style: TextButton.styleFrom(),
-                            onPressed: () { 
+                            onPressed: () {
                               Get.to(ForgotPasswordScreen());
-                             },
+                            },
                             child: Text(
                               'clique aqui.',
-                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                             ),
                           )
                         ],
@@ -115,43 +133,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               // Botão Continuar
-              Padding(
-                padding: const EdgeInsets.only(
-                    bottom: 20), // Ajuste o valor conforme necessário
-                child: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        gradient: TColors.linearGradient,
-                        borderRadius: BorderRadius.circular(
-                            5.0), // Borda arredondada igual ao botão
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            side: BorderSide(
-                              width: 3.0,
-                              color: Colors.transparent,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            backgroundColor: Colors
-                                .transparent, // Fundo transparente para mostrar o gradiente
-                            elevation: 0,
-                            padding: EdgeInsets.symmetric(vertical: 12),
-                            textStyle: TextStyle(
-                              fontSize: TTextSizes.bigTitle,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          onPressed: () async {
+
+GradientButton(onPressed: () async {
                             showDialog(
                               context: context,
                               builder: (context) {
                                 return Center(
-                                  child: CircularProgressIndicator(color: TColors.primaryColor,),
+                                  child: CircularProgressIndicator(
+                                    color: TColors.primaryColor,
+                                  ),
                                 );
                               },
                               barrierDismissible:
@@ -159,21 +149,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             );
                             await api.login();
                             Navigator.of(context).pop();
-                          },
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Entrar',
-                                style: TextStyle(fontSize: 18),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )),
-              ),
-              Row(
+                          }, texto: 'aa',),
+
+
+Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Flexible(
