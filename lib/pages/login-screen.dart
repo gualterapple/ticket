@@ -31,11 +31,10 @@ class _LoginScreenState extends State<LoginScreen> {
     print(response);
   }
 
-    bool _obscurePassword = true;
+  bool _obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(
@@ -134,25 +133,27 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               // Botão Continuar
 
-GradientButton(onPressed: () async {
-                            showDialog(
-                              context: context,
-                              builder: (context) {
-                                return Center(
-                                  child: CircularProgressIndicator(
-                                    color: TColors.primaryColor,
-                                  ),
-                                );
-                              },
-                              barrierDismissible:
-                                  false, // Evita que o usuário feche o diálogo ao tocar fora
-                            );
-                            await api.login();
-                            Navigator.of(context).pop();
-                          }, texto: 'aa',),
+              GradientButton(
+                onPressed: () async {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return Center(
+                        child: CircularProgressIndicator(
+                          color: TColors.primaryColor,
+                        ),
+                      );
+                    },
+                    barrierDismissible:
+                        false, // Evita que o usuário feche o diálogo ao tocar fora
+                  );
+                  await api.login();
+                  Navigator.of(context).pop();
+                },
+                texto: 'Entrar',
+              ),
 
-
-Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Flexible(

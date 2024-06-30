@@ -53,7 +53,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const BigTitle(texto: 'VERIFICAÇÃO DO CÓDIGO'),
+              const BigTitle(texto: 'VERIFICAÇÃO DO CÓDIGO', alignment: TextAlign.start,),
               const SizedBox(
                 height: 10,
               ),

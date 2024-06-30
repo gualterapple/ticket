@@ -60,7 +60,7 @@ class _ChooseInstitutionScreenState extends State<ChooseInstitutionScreen> {
                 ),
                 const SizedBox(height: 20),
                 const Center(
-                  child: BigTitle(texto: 'BEM VINDO AO SIGA!'),
+                  child: BigTitle(texto: 'BEM VINDO AO SIGA!', alignment: TextAlign.start,),
                 ),
                 const SizedBox(height: 20),
                 Center(

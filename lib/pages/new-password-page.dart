@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:ticket/pages/verify-code-screen.dart';
+import 'package:ticket/pages/new-password-sucess-screen.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/widgets/gradient-button.dart';
 
@@ -39,7 +39,7 @@ class _NewPassWordScreenState extends State<NewPassWordScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const BigTitle(texto: 'CRIAR NOVA SENHA'),
+                const BigTitle(texto: 'CRIAR NOVA SENHA', alignment: TextAlign.start,),
                 const SizedBox(
                   height: 10,
                 ),
@@ -103,7 +103,7 @@ class _NewPassWordScreenState extends State<NewPassWordScreen> {
                       height: 40,
                     ),
                     GradientButton(
-                      onPressed: () => Get.to(VerifyCodeScreen()),
+                      onPressed: () => Get.to(NewPasswordSuccess()),
                       texto: 'Redefinir senha',
                     )
                   ]),

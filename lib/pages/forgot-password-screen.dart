@@ -34,7 +34,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const BigTitle(texto: 'ESQUECEU A SUA SENHA ?'),
+              const BigTitle(texto: 'ESQUECEU A SUA SENHA ?', alignment: TextAlign.start,),
               const SizedBox(
                 height: 10,
               ),

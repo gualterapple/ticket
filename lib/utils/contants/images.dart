@@ -6,6 +6,7 @@ class TImagens {
   static String screenLogo = 'assets/images/screen-logo.png';
   static String gmailLogo = 'assets/images/logo-gmail.png';
   static String ockayulaLogo = 'assets/images/ockayula-logo.png';
+  static String passwordIcone = 'assets/images/password-icone.png';
 
 
 
