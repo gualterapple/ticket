@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ticket/pages/forgot-password-screen.dart';
+import 'package:ticket/pages/home-screen.dart';
 import 'package:ticket/services/api.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/utils/contants/images.dart';
@@ -147,8 +148,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     barrierDismissible:
                         false, // Evita que o usuário feche o diálogo ao tocar fora
                   );
-                  await api.login();
-                  Navigator.of(context).pop();
+                  /*await api.login();
+                  Navigator.of(context).pop();*/
+                  Get.to(HomeScreen());
                 },
                 texto: 'Entrar',
               ),

@@ -7,6 +7,9 @@ class TImagens {
   static String gmailLogo = 'assets/images/logo-gmail.png';
   static String ockayulaLogo = 'assets/images/ockayula-logo.png';
   static String passwordIcone = 'assets/images/password-icone.png';
+  static String profileImage = 'assets/images/profile-image.png';
+  static String logoUgs = 'assets/images/logo-ugs.png';
+
 
 
 
