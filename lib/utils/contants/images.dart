@@ -10,6 +10,11 @@ class TImagens {
   static String profileImage = 'assets/images/profile-image.png';
   static String logoUgs = 'assets/images/logo-ugs.png';
 
+  static String semGuias = 'assets/svgs/sem-guias.svg';
+  static String semDeclaracoes = 'assets/svgs/sem-declaracoes.svg';
+  static String logoUgsSvg = 'assets/svgs/logo-ugs.svg';
+
+
 
 
 

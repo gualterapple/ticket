@@ -10,6 +10,10 @@ class TColors {
   static Color ligthGrayColor = Color.fromARGB(255, 236, 236, 236);
   static Color borderGrayColor = Color.fromARGB(255, 236, 236, 236);
 
+  static Color primaryColorDark = Color.fromARGB(255, 68, 143, 117);
+  static Color primaryBackGroundColor = Color.fromARGB(255, 206, 236, 226);
+
+
   // Gradient Colors
   static const Gradient linearGradient = LinearGradient(
     begin: Alignment(0.0, 0.0),

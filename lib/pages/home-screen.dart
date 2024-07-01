@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/utils/contants/images.dart';
@@ -113,7 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     const BigTitle(
                       texto: '3º ano - 2022/2023',
                       alignment: TextAlign.start,
@@ -127,7 +131,89 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    color: TColors.primaryBackGroundColor,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Text(
+                    'Matrícula ativa',
+                    style: TextStyle(color: TColors.primaryColorDark),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  padding: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    color: TColors.primaryBackGroundColor,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Text(
+                    'Sem guias pendentes',
+                    style: TextStyle(color: TColors.primaryColorDark),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  padding: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    color: TColors.primaryBackGroundColor,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Text(
+                    'Bolseiro',
+                    style: TextStyle(color: TColors.primaryColorDark),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Guia recente',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                GestureDetector(
+                  onTap: (){},
+                  child: Row(
+                    children: [
+                      Text('Ver mais '),
+                      Icon(
+                        Iconsax.arrow_right_14,
+                        color: Colors.black,
+                        size: 14, // Ajuste o tamanho do ícone se necessário
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 20,),
+            SvgPicture.asset(TImagens.semGuias),
+            SizedBox(height: 10,),
+            Text('Sem guia para visualizar', style: TextStyle(color: TColors.grayColor),),
+
+            SizedBox(height: 40,),
+            SvgPicture.asset(TImagens.semDeclaracoes),
+            SizedBox(height: 10,),
+            Text('Sem declaração para visualizar', style: TextStyle(color: TColors.grayColor),)
+
+
           ],
         ),
       ),
