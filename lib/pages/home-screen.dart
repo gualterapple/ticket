@@ -189,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 GestureDetector(
-                  onTap: (){},
+                  onTap: () {},
                   child: Row(
                     children: [
                       Text('Ver mais '),
@@ -203,17 +203,50 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             SvgPicture.asset(TImagens.semGuias),
-            SizedBox(height: 10,),
-            Text('Sem guia para visualizar', style: TextStyle(color: TColors.grayColor),),
-
-            SizedBox(height: 40,),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Sem guia para visualizar',
+              style: TextStyle(color: TColors.grayColor),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Declaração recente',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Row(
+                    children: [
+                      Text('Ver mais '),
+                      Icon(
+                        Iconsax.arrow_right_14,
+                        color: Colors.black,
+                        size: 14, // Ajuste o tamanho do ícone se necessário
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
             SvgPicture.asset(TImagens.semDeclaracoes),
-            SizedBox(height: 10,),
-            Text('Sem declaração para visualizar', style: TextStyle(color: TColors.grayColor),)
-
-
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Sem declaração para visualizar',
+              style: TextStyle(color: TColors.grayColor),
+            )
           ],
         ),
       ),
