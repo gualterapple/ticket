@@ -14,6 +14,21 @@ class TImagens {
   static String semDeclaracoes = 'assets/svgs/sem-declaracoes.svg';
   static String logoUgsSvg = 'assets/svgs/logo-ugs.svg';
 
+  static String homeEnable = 'assets/svgs/home-enable.svg';
+  static String homeDisable = 'assets/svgs/home-disable.svg';
+  
+  static String avaliacaoEnable = 'assets/svgs/avaliacao-enable.svg';
+  static String avaliacaoDisable = 'assets/svgs/avaliacao-disable.svg';
+
+  static String financeiroEnable = 'assets/svgs/financeiro-enable.svg';
+  static String financeiroDisable = 'assets/svgs/financeiro-disable.svg';
+
+  static String declaracoesEnable = 'assets/svgs/declaracoes-enable.svg';
+  static String declaracoesDisable = 'assets/svgs/declaracoes-disable.svg';
+
+  static String perfilEnable = 'assets/svgs/perfil-enable.svg';
+  static String perfilDisable = 'assets/svgs/perfil-disable.svg';
+
 
 
 

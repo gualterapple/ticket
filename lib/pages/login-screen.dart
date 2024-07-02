@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ticket/pages/forgot-password-screen.dart';
 import 'package:ticket/pages/home-screen.dart';
+import 'package:ticket/pages/navigation-menu.dart';
 import 'package:ticket/services/api.dart';
 import 'package:ticket/utils/contants/colors.dart';
 import 'package:ticket/utils/contants/images.dart';
@@ -150,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
                   /*await api.login();
                   Navigator.of(context).pop();*/
-                  Get.to(HomeScreen());
+                  Get.to(NavigationMenu());
                 },
                 texto: 'Entrar',
               ),
