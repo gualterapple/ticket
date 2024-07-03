@@ -13,14 +13,12 @@ class TColors {
   static Color primaryColorDark = Color.fromARGB(255, 68, 143, 117);
   static Color primaryBackGroundColor = Color.fromARGB(255, 206, 236, 226);
 
+  static Color screenBackGroundColor = const Color(0xFFF6F5FB);
 
   // Gradient Colors
   static const Gradient linearGradient = LinearGradient(
     begin: Alignment(0.0, 0.0),
     end: Alignment(0.707, -0.707),
-    colors: [
-      Color(0xff63cda8),
-      Color(0xff47b38e)
-    ],
+    colors: [Color(0xff63cda8), Color(0xff47b38e)],
   ); // LinearGradient
 }

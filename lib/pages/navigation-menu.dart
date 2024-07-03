@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:ticket/pages/avaliacoes-screen.dart';
 import 'package:ticket/pages/home-screen.dart';
 import 'package:ticket/utils/contants/images.dart';
 
@@ -21,8 +22,8 @@ class _NavigationMenuState extends State<NavigationMenu> {
       bottomNavigationBar: Obx(
         () => NavigationBar(
           height: 80,
-          elevation: 1,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          elevation: 0,
+          backgroundColor: const Color(0xFFFFFFFF),
           indicatorColor: Colors.transparent,
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
@@ -61,9 +62,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     HomeScreen(),
-    Container(
-      color: Colors.yellow,
-    ),
+    AvaliacoesScreen(),
     Container(
       color: Colors.black,
     ),

@@ -1,5 +1,4 @@
 class TImagens {
-
   static String girlTransparence = 'assets/images/girl-ransparence.png';
   static String boyTransparence = 'assets/images/boy-transparence.png';
 
@@ -16,7 +15,7 @@ class TImagens {
 
   static String homeEnable = 'assets/svgs/home-enable.svg';
   static String homeDisable = 'assets/svgs/home-disable.svg';
-  
+
   static String avaliacaoEnable = 'assets/svgs/avaliacao-enable.svg';
   static String avaliacaoDisable = 'assets/svgs/avaliacao-disable.svg';
 
@@ -29,9 +28,5 @@ class TImagens {
   static String perfilEnable = 'assets/svgs/perfil-enable.svg';
   static String perfilDisable = 'assets/svgs/perfil-disable.svg';
 
-
-
-
-
-
+  static String semAvaliacoes = 'assets/svgs/sem-avaliacoes.svg';
 }
